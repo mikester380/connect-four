@@ -1,0 +1,37 @@
+.button {
+  @extend %unstyled-button;
+  @include drop-shadow;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 0 20px;
+  @include title(24);
+  text-transform: uppercase;
+  transition: box-shadow 0.3s ease-out;
+
+  &:hover {
+    --shadow-color: #{$color-purple-heart};
+  }
+
+  &.text_centered {
+    justify-content: center;
+  }
+
+  &.icon {
+    justify-content: space-between;
+  }
+
+  &.v1 {
+    color: $color-white;
+    background-color: $color-brink-pink;
+  }
+
+  &.v2 {
+    background-color: $color-golden-tainoi;
+  }
+
+  &.v3 {
+    background-color: $color-white;
+  }
+}

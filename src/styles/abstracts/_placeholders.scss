@@ -1,0 +1,18 @@
+%unstyled-button {
+  background-color: transparent;
+  border: none;
+  font: inherit;
+}
+
+%unstyled-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+%fullscreen {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+}

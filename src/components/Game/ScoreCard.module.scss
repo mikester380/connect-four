@@ -1,0 +1,99 @@
+.score_card {
+  background: $color-white;
+  @include drop-shadow;
+  border-radius: 20px;
+  height: 81px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @include media('>=tablet', '<desktop') {
+    justify-content: flex-end;
+    height: 100px;
+    gap: 36px;
+
+    &:nth-child(1) {
+      padding-right: 37px;
+      flex-direction: row;
+    }
+
+    &:nth-child(2) {
+      padding-left: 37px;
+      flex-direction: row-reverse;
+    }
+  }
+
+  @include media('>=desktop') {
+    justify-content: flex-end;
+    padding-bottom: 17px;
+    width: 141px;
+    height: 160px;
+    position: fixed;
+    // position: absolute;
+    top: 50dvh;
+
+    &:nth-child(1) {
+      // left: 0;
+      left: 50vw;
+      // transform: translate(calc(-100% - 60px), -50%);
+      transform: translate(
+        calc(-316px - 60px - 100%),
+        -50%
+      );
+    }
+
+    &:nth-child(2) {
+      // right: 0;
+      right: 50vw;
+      // transform: translate(calc(100% + 60px), -50%);
+      transform: translate(calc(316px + 60px + 100%), -50%);
+    }
+  }
+
+  &_icon {
+    position: absolute;
+  }
+
+  @include media('<desktop') {
+    &_icon {
+      top: 50%;
+    }
+
+    &:nth-child(1) &_icon {
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    &:nth-child(2) &_icon {
+      right: 0;
+      transform: translate(50%, -50%);
+    }
+  }
+
+  @include media('>=desktop') {
+    &_icon {
+      transform: translate(-50%, -50%);
+      top: 0;
+      left: 50%;
+    }
+  }
+
+  &_owner {
+    @include title(16);
+    text-transform: uppercase;
+
+    @include media('>=tablet') {
+      @include title(20);
+    }
+  }
+
+  &_score {
+    @include title(32);
+
+    @include media('>=tablet') {
+      @include title(56);
+    }
+  }
+}

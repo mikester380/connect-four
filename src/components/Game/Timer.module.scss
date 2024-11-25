@@ -1,0 +1,38 @@
+.timer {
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+  z-index: 4;
+  transform: translateY(-15px);
+
+  @include media('>=tablet') {
+    transform: translateY(-40px);
+  }
+
+  .bg {
+    width: 100%;
+    position: relative;
+  }
+
+  .info {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    top: 0;
+    left: 0;
+
+    color: $color-white;
+
+    .time {
+      @include title(56);
+    }
+
+    .turn {
+      text-transform: uppercase;
+      @include title(16);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.counter {
+  &_sm {
+    transform: translateY(4px);
+    @include media('>=tablet') {
+      display: none;
+    }
+  }
+
+  &_lg {
+    transform: translateY(2px);
+    @include media('<tablet') {
+      display: none;
+    }
+  }
+}

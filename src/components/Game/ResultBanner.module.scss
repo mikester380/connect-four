@@ -1,0 +1,28 @@
+.banner {
+  @include drop-shadow;
+  background: $color-white;
+  display: grid;
+  justify-items: center;
+  width: 85%;
+  min-width: min-content;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 17px 0;
+  position: relative;
+  z-index: 6;
+  transform: translateY(-15px);
+
+  @include media('>=tablet') {
+    width: 285px;
+    transform: translateY(-40px);
+  }
+
+  .player,
+  .message {
+    text-transform: uppercase;
+  }
+
+  .message {
+    @include title(56);
+  }
+}

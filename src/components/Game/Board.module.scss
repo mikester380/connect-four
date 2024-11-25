@@ -1,0 +1,81 @@
+.board {
+  position: relative;
+
+  .cells {
+    position: relative;
+    z-index: 2;
+    padding: 2.2vw;
+    padding-bottom: 8.493vw;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1.6vw;
+
+    @include media('>=tablet') {
+      padding: 16px;
+      padding-bottom: 60px;
+      gap: 17px;
+    }
+
+    .col {
+      display: grid;
+      gap: 1.6vw;
+
+      .cell {
+        aspect-ratio: 1 / 1;
+        display: grid;
+        place-items: center;
+
+        &.win_cell {
+          position: relative;
+
+          &::before {
+            content: '';
+            width: 50%;
+            aspect-ratio: 1 / 1;
+            border-radius: 100%;
+            border: 6px solid $color-white;
+            position: absolute;
+            z-index: 5;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            @include media('>=tablet') {
+              width: 34px;
+            }
+          }
+        }
+      }
+
+      @include media('>=tablet') {
+        gap: 17px;
+      }
+    }
+  }
+
+  .layer {
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+
+    &_w {
+      z-index: 1;
+    }
+
+    &_b {
+      z-index: 3;
+    }
+
+    &_sm {
+      @include media('>=tablet') {
+        display: none;
+      }
+    }
+
+    &_lg {
+      @include media('<tablet') {
+        display: none;
+      }
+    }
+  }
+}
